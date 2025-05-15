@@ -154,165 +154,70 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-4">Motivation</h2>
-
-        <p>
-          <div class="left-caption">
-            <b>Key findings:</b>
-            MPCC cannot simultaneously ensure both safety and aggressiveness on <b>mixed racetracks</b>.
-          </div>
-        </p>
-
-        <p>
-          <div class="left-caption">
-            <b>High Lag error weight:</b>
-
-            The aggressiveness of racing velocity of MPCC in low-curvature regions constrained by its performance in sharp curves. 
-            <span class="comp_dfu_prc_repl">
-              <span class="replay_v2" video_section="high_lag_effect">
-                <img src="static/replay.png" />
-                <span>replay</span>
-              </span>
-            </span>
-            
-          </div>
-        </p>
-        <div class="video-container text-centered traj_denoise_row" id="high_lag_effect">
-          <video width="90%" playsinline="" autoplay="" preload="" muted="">
-            <source src="materials/media/lag_analysis/animation_6.5_slow.mp4" type="video/mp4">
-          </video>
-        </div>
-        <br/>
-
-        <p>
-          <div class="left-caption">
-            <b>Minior Lag error weight.</b>
-
-            The inability to ensure the accuracy of the projected velocity approximation undermines safety—especially in corners, where the projected velocity can diverge significantly from the vehicle's actual velocity.
-            
-            <!-- <br/> -->
-            <span class="comp_dfu_prc_repl">
-              <span class="replay_v2" video_section="minor_lag_effect">
-                <img src="static/replay.png" />
-                <span>replay</span>
-              </span>
-            </span>
-            
-          </div>
-        </p>
-        <div class="video-container text-centered traj_denoise_row" id="minor_lag_effect">
-        
-          <video width="90%" playsinline="" autoplay="" preload="" muted="">
-            <source src="materials/media/lag_analysis/animation_0.5_slow.mp4" type="video/mp4">
-        </video>
-
-        </div>
-        <hr>
-        <br/>
-        <p>
-          <div class="left-caption">
-            <b>Co-issues problems of prediction horizon-constrained MPCC:</b>
-
-            The combination of a high projected velocity weight, a large lag error weight, and only a minor contouring weight keeps the MPCC committed to an aggressive cornering strategy. Consequently, the vehicle delays its braking point, sustains a high cornering velocity, and increases the risk of colliding with the racetrack boundaries.
-            
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<hr>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <!-- <h2 class="title is-4">Meta-World Environment</h2> -->
-        <h2 class="title is-4">Results</h2>
-
+          <p>
+            <div class="left-caption">
+              <b>Key findings:</b>
+              MPCC cannot simultaneously ensure both safety and aggressiveness on <b>mixed racetracks</b>.
+            </div>
+          </p> 
         <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
           <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
             <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
               <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
-                  <div class="splide__track">
-                      <!-- <ul class="splide__list"> -->
-                        <div class="splide_page_div_1">
+                <div class="splide__track"> 
+                  <div class="splide_page_div_1">
+                    <p>
+                      <div class="left-caption">
+                        <b>High Lag error weight:</b>
 
-                          <div>
-                            <span class="splide_kuka_prob_id_repl">
-                              Single-lap Racing Trajectories for Different Methods with Cartographer
-                            </span>
-                          </div>
+                        The aggressiveness of racing velocity of MPCC in low-curvature regions constrained by its performance in sharp curves. 
+                        <span class="comp_dfu_prc_repl">
+                          <span class="replay_v2" video_section="high_lag_effect">
+                            <img src="static/replay.png" />
+                            <span>replay</span>
+                          </span>
+                        </span>
+                        
+                      </div>
+                    </p>
+                    <div class="video-container text-centered traj_denoise_row" id="high_lag_effect">
+                      <video width="90%" playsinline="" autoplay="" preload="" muted="">
+                        <source src="materials/media/lag_analysis/animation_6.5_slow.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <br/>
 
-                          <div class="cpdfu_base_row">
-                            <div class="multi_hor_rm2d_item">
-                              <img src="materials/media/results/fig_real_racing.png" alt="" style="max-width: 800px">
-                            </div>
-                          </div>
+                    <p>
+                      <div class="left-caption">
+                        <b>Minior Lag error weight.</b>
 
-                          
-                          <p>
-                            <div class="left-caption">
-                              The color of each trajectory represents the maximum velocity achieved during racing (VPMPCC-SPF's color is manually selected to highlight). Among all methods, VPMPCC not only achieves the most aggressive lap time but also ensures safe cornering trajectories.
+                        The inability to ensure the accuracy of the projected velocity approximation undermines safety—especially in corners, where the projected velocity can diverge significantly from the vehicle's actual velocity.
+                        
+                        <!-- <br/> -->
+                        <span class="comp_dfu_prc_repl">
+                          <span class="replay_v2" video_section="minor_lag_effect">
+                            <img src="static/replay.png" />
+                            <span>replay</span>
+                          </span>
+                        </span>
+                        
+                      </div>
+                    </p>
+                    <div class="video-container text-centered traj_denoise_row" id="minor_lag_effect">
+                    
+                      <video width="90%" playsinline="" autoplay="" preload="" muted="">
+                        <source src="materials/media/lag_analysis/animation_0.5_slow.mp4" type="video/mp4">
+                    </video>
 
-                            </div>
-                          </p>
-                          <!-- <br/> -->
-
-                          <div class="cpdfu_base_row">
-                            <div class="multi_hor_rm2d_item">
-                              <p class="splide_lb_suc_vs_rollout_repl">
-                                Longitudinal velocities corresponding to racing trajectories
-                              </p>
-                              <img src="materials/media/results/vx_final.jpg" alt="" style="max-width: 330px">
-                            </div>
-                          
-                            <div class="multi_hor_rm2d_item">
-                              <p class="splide_lb_suc_vs_rollout_repl">
-                                Cost of optimization problems corresponding to racing trajectories
-                              </p>
-                              <img src="materials/media/results/cost.jpg" alt="" style="max-width: 405px">
-                            </div>
-                          </div>
-                            
-                          <p>
-                            <div class="left-caption">
-                              The velocity profile indicates that VPMPCC maintains a safe cornering velocity during aggressive racing. The cost analysis further shows that VPMPCC consistently identifies the optimal braking point before entering each corner, thereby enabling the planning of a safe trajectory through the corner.
-                            </div>
-                          </p>
-
-
-                          <div class="cpdfu_base_row">
-                            <div class="multi_hor_rm2d_item">
-                              <p class="splide_lb_suc_vs_rollout_repl">
-                                Comparison of computation efficiency.
-                              </p>
-                              <img src="materials/media/results/CT.png" alt="" style="max-width: 350px">
-                            </div>
-                            
-                            <div class="multi_hor_rm2d_item">
-                              <p class="splide_lb_suc_vs_rollout_repl">
-                                Comparison of lap time stability.
-                              </p>
-                              <img src="materials/media/results/fig_box_laptime.jpg" alt="" style="max-width: 370px">
-                            </div>
-                          </div>
-                        </div>
-                      <!-- </ul> -->
+                    </div>
+                    
                   </div>
-                <p>
-                  <div class="left-caption">
-                    This schematic illustrates the computational efficiency of VPMPCC and its stability over multiple racing laps. In the absence of disturbances in the localization method, VPMPCC maintains highly stable lap times over 10 consecutive laps.
+                </div>
 
-                  </div>
-                </p>
-                  
-
-                <br/>
+                <!-- <br/> -->
                 <p>
                   <div class="left-caption">
                     <b>Summary:</b>
@@ -329,6 +234,96 @@
   </div>
 </section>
 <hr>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Results</h2>
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <p>
+                <div class="left-caption">
+                  Single-lap Racing Trajectories for Different Methods with Cartographer
+                </div>
+              </p>
+            
+              <img src="materials/media/results/fig_real_racing.png" alt="" style="max-width: 800px">
+            </div>
+          </div>
+
+          <p>
+            <div class="left-caption">
+              The color of each trajectory represents the maximum velocity achieved during racing (VPMPCC-SPF's color is manually selected to highlight). Among all methods, VPMPCC not only achieves the most aggressive lap time but also ensures safe cornering trajectories.
+
+            </div>
+          </p>
+          <hr>
+                          
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <p class="splide_lb_suc_vs_rollout_repl">
+                Longitudinal velocities corresponding to racing trajectories
+              </p>
+              <img src="materials/media/results/vx_final.jpg" alt="" style="max-width: 330px">
+            </div>
+          
+            <div class="multi_hor_rm2d_item">
+              <p class="splide_lb_suc_vs_rollout_repl">
+                Cost of optimization problems corresponding to racing trajectories
+              </p>
+              <img src="materials/media/results/cost.jpg" alt="" style="max-width: 405px">
+            </div>
+          </div>
+                            
+          <p>
+            <div class="left-caption">
+              The velocity profile indicates that VPMPCC maintains a safe cornering velocity during aggressive racing. The cost analysis further shows that VPMPCC consistently identifies the optimal braking point before entering each corner, thereby enabling the planning of a safe trajectory through the corner.
+            </div>
+          </p>
+          <hr>
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <p class="splide_lb_suc_vs_rollout_repl">
+                Comparison of computation efficiency.
+              </p>
+              <img src="materials/media/results/CT.png" alt="" style="max-width: 350px">
+            </div>
+            
+            <div class="multi_hor_rm2d_item">
+              <p class="splide_lb_suc_vs_rollout_repl">
+                Comparison of lap time stability.
+              </p>
+              <img src="materials/media/results/fig_box_laptime.jpg" alt="" style="max-width: 370px">
+            </div>
+          </div>
+
+          <p>
+            <div class="left-caption">
+              This schematic illustrates the computational efficiency of VPMPCC and its stability over multiple racing laps. In the absence of disturbances in the localization method, VPMPCC maintains highly stable lap times over 10 consecutive laps.
+            </div>
+          </p>    
+          <hr>
+
+          <p>
+            <div class="left-caption">
+              <b>Co-issues problems of prediction horizon-constrained MPCC:</b>
+
+              The combination of a high projected velocity weight, a large lag error weight, and only a minor contouring weight keeps the MPCC committed to an aggressive cornering strategy. Consequently, the vehicle delays its braking point, sustains a high cornering velocity, and increases the risk of colliding with the racetrack boundaries.
+              
+            </div>
+          </p>
+          <!--  -->
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
 
 <section class="section">
   <div class="container is-max-desktop">
