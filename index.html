@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Project Page for Learning-Based Safe Trajectory Planning with Velocity Prediction for Aggressive Autonomous Racing.">
-  <meta name="keywords" content="XX">
+  <meta name="keywords" content="Trajectory Planning, Model Predictive Contouring Control, Bayesian Optimization, Autonomous Racing, Scaled Platform">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- TODO: -->
@@ -36,7 +36,7 @@
 
 <body>
 
-
+<!-- Title -->
 <section class="hero" style="background-color: #ebf0f1;">
   <div class="hero-body hero-body-dec19" >
     <div class="container is-max-desktop">
@@ -47,6 +47,26 @@
             Learning-Based Safe Trajectory Planning <br> with Velocity Prediction for Aggressive Autonomous Racing
           </h1>
 
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv -->
+              
+              <!-- TODO: -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zhouhengli/VPMPCC"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
 
           
         </div>
@@ -54,8 +74,334 @@
     </div>
   </div>
 </section>
-
 <hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">Meta-World Environment</h2> -->
+        <h2 class="title is-4">Safe and Aggressive Cornering Trajectories</h2>
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+                <!-- <div id="splide-antmaze-medium-qual-v2" class="splide"> -->
+                  <div class="splide__track">
+                      <!-- <ul class="splide__list"> -->
+                        <div class="splide_page_div_1">
+
+                          <div class="cpdfu_base_row">
+                            <div class="antmaze_high_dim_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Exposure time of 4s
+                              </p>
+                              <img src="./materials/media/corners/stack1.jpg" alt="" style="max-width: 350px">
+                            </div>
+                            <!--  -->
+
+                            <div class="antmaze_high_dim_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Exposure time of 2.5s
+                              </p>
+                              <img src="./materials/media/corners/stack2.jpg" alt="" 
+                              style="max-width: 380px">
+                            </div>
+                          </div>
+                          <!-- style="max-width: 490px" -->
+                          
+  
+                      </ul>
+                  <!-- </div> -->
+                <!-- </div> -->
+                <br/>
+                <p>
+                  <div class="left-caption">
+                    <!-- <b>Effect of Lag Error on MPCC.</b> -->
+      
+                    Comparison of trajectories between the proposed Velocity Prediction MPCC (VPMPCC) and other optimal control problem (OCP)-based planners through high-curvature corners using a F1TENTH vehicle. The trajectories are visualized using long-exposure photography. VPMPCC can plan both safe and aggressive cornering trajectories for racing performance maximization.
+
+                  </div>
+                </p>
+          </div>  
+        </section>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+            Autonomous racing research focuses on trajectory planning for <b>safe cornering while maintaining aggressive racing</b>. The proposed method, VPMPCC, integrates velocity prediction for safety and aggressiveness using Model Predictive Contouring Control (MPCC) framework. Velocity prediction is achieved by encoding the racetrack into a reference velocity profile, optimizing local trajectory velocity, and improving safety in sharp corners. A Lap Time Minimization (LTM)-based objective function combined with Bayesian Optimization (BO) learns optimal VPMPCC parameters. This approach enables aggressive lap times and achieves 98.23% of the vehicle's racing limits on a mixed racetrack with a mean computation time of 6.41 ms.
+          </p>
+          <img src="materials/media/pipeline/pipeline.png" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Motivation</h2>
+
+        <p>
+          <div class="left-caption">
+            <b>Key findings:</b>
+            MPCC cannot simultaneously ensure both safety and aggressiveness on <b>mixed racetracks</b>.
+          </div>
+        </p>
+
+        <p>
+          <div class="left-caption">
+            <b>High Lag error weight:</b>
+
+            The aggressiveness of racing velocity of MPCC in low-curvature regions constrained by its performance in sharp curves. 
+            <span class="comp_dfu_prc_repl">
+              <span class="replay_v2" video_section="high_lag_effect">
+                <img src="static/replay.png" />
+                <span>replay</span>
+              </span>
+            </span>
+            
+          </div>
+        </p>
+        <div class="video-container text-centered traj_denoise_row" id="high_lag_effect">
+          <video width="90%" playsinline="" autoplay="" preload="" muted="">
+            <source src="materials/media/lag_analysis/animation_6.5_slow.mp4" type="video/mp4">
+          </video>
+        </div>
+        <br/>
+
+        <p>
+          <div class="left-caption">
+            <b>Minior Lag error weight.</b>
+
+            The inability to ensure the accuracy of the projected velocity approximation undermines safety—especially in corners, where the projected velocity can diverge significantly from the vehicle's actual velocity.
+            
+            <!-- <br/> -->
+            <span class="comp_dfu_prc_repl">
+              <span class="replay_v2" video_section="minor_lag_effect">
+                <img src="static/replay.png" />
+                <span>replay</span>
+              </span>
+            </span>
+            
+          </div>
+        </p>
+        <div class="video-container text-centered traj_denoise_row" id="minor_lag_effect">
+        
+          <video width="90%" playsinline="" autoplay="" preload="" muted="">
+            <source src="materials/media/lag_analysis/animation_0.5_slow.mp4" type="video/mp4">
+        </video>
+
+        </div>
+        <hr>
+        <br/>
+        <p>
+          <div class="left-caption">
+            <b>Co-issues problems of prediction horizon-constrained MPCC:</b>
+
+            The combination of a high projected velocity weight, a large lag error weight, and only a minor contouring weight keeps the MPCC committed to an aggressive cornering strategy. Consequently, the vehicle delays its braking point, sustains a high cornering velocity, and increases the risk of colliding with the racetrack boundaries.
+            
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">Meta-World Environment</h2> -->
+        <h2 class="title is-4">Results</h2>
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+                  <div class="splide__track">
+                      <!-- <ul class="splide__list"> -->
+                        <div class="splide_page_div_1">
+
+                          <div>
+                            <span class="splide_kuka_prob_id_repl">
+                              Single-lap Racing Trajectories for Different Methods with Cartographer
+                            </span>
+                          </div>
+
+                          <div class="cpdfu_base_row">
+                            <div class="multi_hor_rm2d_item">
+                              <img src="materials/media/results/fig_real_racing.png" alt="" style="max-width: 800px">
+                            </div>
+                          </div>
+
+                          
+                          <p>
+                            <div class="left-caption">
+                              The color of each trajectory represents the maximum velocity achieved during racing (VPMPCC-SPF's color is manually selected to highlight). Among all methods, VPMPCC not only achieves the most aggressive lap time but also ensures safe cornering trajectories.
+
+                            </div>
+                          </p>
+                          <!-- <br/> -->
+
+                          <div class="cpdfu_base_row">
+                            <div class="multi_hor_rm2d_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Longitudinal velocities corresponding to racing trajectories
+                              </p>
+                              <img src="materials/media/results/vx_final.jpg" alt="" style="max-width: 330px">
+                            </div>
+                          
+                            <div class="multi_hor_rm2d_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Cost of optimization problems corresponding to racing trajectories
+                              </p>
+                              <img src="materials/media/results/cost.jpg" alt="" style="max-width: 405px">
+                            </div>
+                          </div>
+                            
+                          <p>
+                            <div class="left-caption">
+                              The velocity profile indicates that VPMPCC maintains a safe cornering velocity during aggressive racing. The cost analysis further shows that VPMPCC consistently identifies the optimal braking point before entering each corner, thereby enabling the planning of a safe trajectory through the corner.
+                            </div>
+                          </p>
+
+
+                          <div class="cpdfu_base_row">
+                            <div class="multi_hor_rm2d_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Comparison of computation efficiency.
+                              </p>
+                              <img src="materials/media/results/CT.png" alt="" style="max-width: 350px">
+                            </div>
+                            
+                            <div class="multi_hor_rm2d_item">
+                              <p class="splide_lb_suc_vs_rollout_repl">
+                                Comparison of lap time stability.
+                              </p>
+                              <img src="materials/media/results/fig_box_laptime.jpg" alt="" style="max-width: 370px">
+                            </div>
+                          </div>
+                        </div>
+                      <!-- </ul> -->
+                  </div>
+                <p>
+                  <div class="left-caption">
+                    This schematic illustrates the computational efficiency of VPMPCC and its stability over multiple racing laps. In the absence of disturbances in the localization method, VPMPCC maintains highly stable lap times over 10 consecutive laps.
+
+                  </div>
+                </p>
+                  
+
+                <br/>
+                <p>
+                  <div class="left-caption">
+                    <b>Summary:</b>
+      
+                    VPMPCC outperforms dynMPCC and sfmMPCC in terms of lap time and velocity, demonstrating superior safety and racing performance  through its advanced velocity prediction. It successfully achieves a balance between safety and aggressiveness  by maintaining a safe cornering trajectory during aggressive racing.
+
+                  </div>
+                </p>
+          </div>  
+        </section>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Continous Racing with Stability</h2>
+        <div class="container bg-3">
+          <div class="centered-caption" style="justify-content: center;">
+
+            <div class="video-container" style="gap: 0px" >
+
+                <div class="continuous_racing_item" id="First_Viewpoint_id">
+                  <p class="splide_lb_suc_vs_rollout_repl cal_our_qual_caption">
+                    First Viewpoint
+                    <span class="splide_kuka_prob_id_repl">
+                      <!-- replay together -->
+                      <span class="replay_lb_suc" video_section="First_Viewpoint_id">
+                        <img src="static/replay.png" />
+                        <span>replay</span>
+                      </span>
+                    </span>
+                  </p>
+                  <video id="antmaze_exp_qual_list_dset" muted autoplay="" preload="metadata" style="max-width: 330px">
+                    <source src="materials/media/real_racing/first_view.mp4"  type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="continuous_racing_item" id="Third_Viewpoint_id">
+                  <div class="multi_hor_rm2d_caption cal_our_qual_caption" > 
+                    Third Viewpoint
+                    <span class="splide_kuka_prob_id_repl">
+                      <span class="replay_lb_suc" video_section="Third_Viewpoint_id">
+                        <img src="static/replay.png" />
+                        <span>replay</span>
+                      </span>
+                    </span>
+                  </div>
+
+                  <video id="antmaze_exp_qual_list_rollout" muted autoplay="" preload="metadata" style="max-width: 430px">
+                    <source src="materials/media/real_racing/third_view.mp4" type="video/mp4">
+                  </video>
+
+                </div>
+            </div>
+
+            <div class="left-caption" style="margin-top: 10px;">
+              <b>VPMPCC has been successfully deployed on the real-world F1TENTH platform, demonstrating both safe and aggressive racing. It secured <a href="https://iv2024-race.f1tenth.org/results.html" style="text-decoration: none;" target=_blank>4th place in the Roboracer competition at IV2024</a>.</b> 
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+            This paper introduces a learning-based framework that balances safety and aggressive racing by integrating velocity prediction into trajectory planning. In real-world tests, it achieves 98.15% of the vehicle's handling limit with a mean computation time of 6.41ms. LTM-based Bayesian optimization auto-tunes aggressive parameters, enabling multiple consecutive laps with excellent safety and efficient energy use. The system optimally determines braking points before sharp turns, generalizes parameters across unseen racetracks to match offline trajectories, and exploits shortcuts through consecutive corners to produce shorter, kinematically feasible paths that can seed offline optimizers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content column is-full-width ">
@@ -63,8 +409,15 @@
     <pre><code>
       To be updated soon.
     </code></pre>
+    <p>
+      Brief conference paper: <a href="https://arxiv.org/pdf/2410.11570"
+                   target="_blank">A Data-Driven Aggressive Autonomous Racing Framework Utilizing Local Trajectory Planning with Velocity Prediction</a> <br>
+      A simpler approach uses the racetrack's offline curvature to optimize the velocity profile of the local trajectory: <a href="https://ieeexplore.ieee.org/document/10920215"
+                   target="_blank">Reduce Lap Time for Autonomous Racing with Curvature-Integrated MPCC Local Trajectory Planning Method</a>
+    </p>
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="container">
